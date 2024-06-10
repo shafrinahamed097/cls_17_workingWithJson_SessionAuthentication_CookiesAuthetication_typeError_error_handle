@@ -17,3 +17,12 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
     session_start();
     echo $_SESSION['username'];
 }
+
+// Delete From Session Store
+
+if($_SERVER['REQUEST_METHOD']=="DELETE"){
+    session_start();
+   unset($_SESSION['username']);
+   session_destroy();
+   echo "session_destroyed";
+}
