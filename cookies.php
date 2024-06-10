@@ -19,3 +19,10 @@ if($_SERVER['REQUEST_METHOD']=="DELETE"){
     setcookie("username","",["expires"=>time()-3600]);
     echo "Cookie Deleted";
 }
+
+// Read Cookies Store
+if($_SERVER['REQUEST_METHOD']=="GET"){
+    if(isset($_COOKIE['username'])){
+        echo $_COOKIE['username'];
+    }
+}
