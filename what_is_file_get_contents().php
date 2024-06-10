@@ -2,16 +2,17 @@
 
 // What is file_get_contents()
 // JSON Request-> Response
+// JSON Decode
 
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
-  $PlainTestJSON = file_get_contents("php://input");
-  $PlainTestArray=json_decode($PlainTestJSON,true);
-  $PlainArray['num1'];
-  $sum=$PlainTestArray['num1']+$PlainTestArray['num2'];
-  $sub=$PlainTestArray['num1']-$PlainTestArray['num2'];
-  $multi=$PlainTestArray['num1']*$PlainTestArray['num2'];
-  $div=$PlainTestArray['num1']/$PlainTestArray['num2'];
+  $PlainTextJSON = file_get_contents("php://input");
+  $PlainTextArray=json_decode($PlainTextJSON,true);
+ 
+  $sum=$PlainTextArray['num1']+$PlainTextArray['num2'];
+  $sub=$PlainTextArray['num1']-$PlainTextArray['num2'];
+  $multi=$PlainTextArray['num1']*$PlainTextArray['num2'];
+  $div=$PlainTextArray['num1']/$PlainTextArray['num2'];
   
 
   $result=array("sum"=>$sum,"sub"=>$sub,"multi"=>$multi,"div"=>$div);
